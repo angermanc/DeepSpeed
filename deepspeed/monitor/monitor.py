@@ -44,8 +44,8 @@ class MonitorMaster(Monitor):
                 self.wandb_monitor = WandbMonitor(monitor_config.wandb)
             if monitor_config.csv_monitor.enabled:
                 self.csv_monitor = csvMonitor(monitor_config.csv_monitor)
-            if monitor_config.comet.enabled:
-                self.comet_monitor = CometMonitor(monitor_config.comet)
+            # if monitor_config.comet.enabled:
+            #     self.comet_monitor = CometMonitor(monitor_config.comet)
 
     def write_events(self, event_list):
         if dist.get_rank() == 0:
